@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    optimizeDeps: {
+      include: ["react-leaflet", "@react-leaflet/core", "leaflet"],
+    },
+  },
 });
+

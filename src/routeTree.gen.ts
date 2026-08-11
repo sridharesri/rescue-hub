@@ -10,33 +10,274 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AlertsRouteImport } from './routes/alerts'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as DesignSystemRouteImport } from './routes/design-system'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as NgosRouteImport } from './routes/ngos'
+import { Route as SafetyRouteImport } from './routes/safety'
+import { Route as SheltersRouteImport } from './routes/shelters'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AuthenticatedMyReportsRouteImport } from './routes/_authenticated/my-reports'
+import { Route as AuthenticatedOperationsRouteImport } from './routes/_authenticated/operations'
+import { Route as AuthenticatedQueueRouteImport } from './routes/_authenticated/queue'
+import { Route as AuthenticatedReportRouteImport } from './routes/_authenticated/report'
+import { Route as AuthenticatedRescueTeamsRouteImport } from './routes/_authenticated/rescue-teams'
+import { Route as DisastersIndexRouteImport } from './routes/disasters.index'
+import { Route as DisastersIdRouteImport } from './routes/disasters.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignSystemRoute = DesignSystemRouteImport.update({
+  id: '/design-system',
+  path: '/design-system',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HospitalsRoute = HospitalsRouteImport.update({
+  id: '/hospitals',
+  path: '/hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NgosRoute = NgosRouteImport.update({
+  id: '/ngos',
+  path: '/ngos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SafetyRoute = SafetyRouteImport.update({
+  id: '/safety',
+  path: '/safety',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SheltersRoute = SheltersRouteImport.update({
+  id: '/shelters',
+  path: '/shelters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedMyReportsRoute = AuthenticatedMyReportsRouteImport.update({
+  id: '/my-reports',
+  path: '/my-reports',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedOperationsRoute = AuthenticatedOperationsRouteImport.update({
+  id: '/operations',
+  path: '/operations',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedQueueRoute = AuthenticatedQueueRouteImport.update({
+  id: '/queue',
+  path: '/queue',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedReportRoute = AuthenticatedReportRouteImport.update({
+  id: '/report',
+  path: '/report',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedRescueTeamsRoute =
+  AuthenticatedRescueTeamsRouteImport.update({
+    id: '/rescue-teams',
+    path: '/rescue-teams',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const DisastersIndexRoute = DisastersIndexRouteImport.update({
+  id: '/disasters/',
+  path: '/disasters/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisastersIdRoute = DisastersIdRouteImport.update({
+  id: '/disasters/$id',
+  path: '/disasters/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alerts': typeof AlertsRoute
+  '/auth': typeof AuthRoute
+  '/design-system': typeof DesignSystemRoute
+  '/history': typeof HistoryRoute
+  '/hospitals': typeof HospitalsRoute
+  '/map': typeof MapRoute
+  '/ngos': typeof NgosRoute
+  '/safety': typeof SafetyRoute
+  '/shelters': typeof SheltersRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/my-reports': typeof AuthenticatedMyReportsRoute
+  '/operations': typeof AuthenticatedOperationsRoute
+  '/queue': typeof AuthenticatedQueueRoute
+  '/report': typeof AuthenticatedReportRoute
+  '/rescue-teams': typeof AuthenticatedRescueTeamsRoute
+  '/disasters/$id': typeof DisastersIdRoute
+  '/disasters/': typeof DisastersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/alerts': typeof AlertsRoute
+  '/auth': typeof AuthRoute
+  '/design-system': typeof DesignSystemRoute
+  '/history': typeof HistoryRoute
+  '/hospitals': typeof HospitalsRoute
+  '/map': typeof MapRoute
+  '/ngos': typeof NgosRoute
+  '/safety': typeof SafetyRoute
+  '/shelters': typeof SheltersRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/my-reports': typeof AuthenticatedMyReportsRoute
+  '/operations': typeof AuthenticatedOperationsRoute
+  '/queue': typeof AuthenticatedQueueRoute
+  '/report': typeof AuthenticatedReportRoute
+  '/rescue-teams': typeof AuthenticatedRescueTeamsRoute
+  '/disasters/$id': typeof DisastersIdRoute
+  '/disasters': typeof DisastersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/about': typeof AboutRoute
+  '/alerts': typeof AlertsRoute
+  '/auth': typeof AuthRoute
+  '/design-system': typeof DesignSystemRoute
+  '/history': typeof HistoryRoute
+  '/hospitals': typeof HospitalsRoute
+  '/map': typeof MapRoute
+  '/ngos': typeof NgosRoute
+  '/safety': typeof SafetyRoute
+  '/shelters': typeof SheltersRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/_authenticated/my-reports': typeof AuthenticatedMyReportsRoute
+  '/_authenticated/operations': typeof AuthenticatedOperationsRoute
+  '/_authenticated/queue': typeof AuthenticatedQueueRoute
+  '/_authenticated/report': typeof AuthenticatedReportRoute
+  '/_authenticated/rescue-teams': typeof AuthenticatedRescueTeamsRoute
+  '/disasters/$id': typeof DisastersIdRoute
+  '/disasters/': typeof DisastersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/alerts'
+    | '/auth'
+    | '/design-system'
+    | '/history'
+    | '/hospitals'
+    | '/map'
+    | '/ngos'
+    | '/safety'
+    | '/shelters'
+    | '/admin'
+    | '/my-reports'
+    | '/operations'
+    | '/queue'
+    | '/report'
+    | '/rescue-teams'
+    | '/disasters/$id'
+    | '/disasters/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/alerts'
+    | '/auth'
+    | '/design-system'
+    | '/history'
+    | '/hospitals'
+    | '/map'
+    | '/ngos'
+    | '/safety'
+    | '/shelters'
+    | '/admin'
+    | '/my-reports'
+    | '/operations'
+    | '/queue'
+    | '/report'
+    | '/rescue-teams'
+    | '/disasters/$id'
+    | '/disasters'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/alerts'
+    | '/auth'
+    | '/design-system'
+    | '/history'
+    | '/hospitals'
+    | '/map'
+    | '/ngos'
+    | '/safety'
+    | '/shelters'
+    | '/_authenticated/admin'
+    | '/_authenticated/my-reports'
+    | '/_authenticated/operations'
+    | '/_authenticated/queue'
+    | '/_authenticated/report'
+    | '/_authenticated/rescue-teams'
+    | '/disasters/$id'
+    | '/disasters/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
+  AlertsRoute: typeof AlertsRoute
+  AuthRoute: typeof AuthRoute
+  DesignSystemRoute: typeof DesignSystemRoute
+  HistoryRoute: typeof HistoryRoute
+  HospitalsRoute: typeof HospitalsRoute
+  MapRoute: typeof MapRoute
+  NgosRoute: typeof NgosRoute
+  SafetyRoute: typeof SafetyRoute
+  SheltersRoute: typeof SheltersRoute
+  DisastersIdRoute: typeof DisastersIdRoute
+  DisastersIndexRoute: typeof DisastersIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +289,179 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/design-system': {
+      id: '/design-system'
+      path: '/design-system'
+      fullPath: '/design-system'
+      preLoaderRoute: typeof DesignSystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hospitals': {
+      id: '/hospitals'
+      path: '/hospitals'
+      fullPath: '/hospitals'
+      preLoaderRoute: typeof HospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ngos': {
+      id: '/ngos'
+      path: '/ngos'
+      fullPath: '/ngos'
+      preLoaderRoute: typeof NgosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/safety': {
+      id: '/safety'
+      path: '/safety'
+      fullPath: '/safety'
+      preLoaderRoute: typeof SafetyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shelters': {
+      id: '/shelters'
+      path: '/shelters'
+      fullPath: '/shelters'
+      preLoaderRoute: typeof SheltersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/my-reports': {
+      id: '/_authenticated/my-reports'
+      path: '/my-reports'
+      fullPath: '/my-reports'
+      preLoaderRoute: typeof AuthenticatedMyReportsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/operations': {
+      id: '/_authenticated/operations'
+      path: '/operations'
+      fullPath: '/operations'
+      preLoaderRoute: typeof AuthenticatedOperationsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/queue': {
+      id: '/_authenticated/queue'
+      path: '/queue'
+      fullPath: '/queue'
+      preLoaderRoute: typeof AuthenticatedQueueRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/report': {
+      id: '/_authenticated/report'
+      path: '/report'
+      fullPath: '/report'
+      preLoaderRoute: typeof AuthenticatedReportRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/rescue-teams': {
+      id: '/_authenticated/rescue-teams'
+      path: '/rescue-teams'
+      fullPath: '/rescue-teams'
+      preLoaderRoute: typeof AuthenticatedRescueTeamsRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/disasters/': {
+      id: '/disasters/'
+      path: '/disasters'
+      fullPath: '/disasters/'
+      preLoaderRoute: typeof DisastersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disasters/$id': {
+      id: '/disasters/$id'
+      path: '/disasters/$id'
+      fullPath: '/disasters/$id'
+      preLoaderRoute: typeof DisastersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedMyReportsRoute: typeof AuthenticatedMyReportsRoute
+  AuthenticatedOperationsRoute: typeof AuthenticatedOperationsRoute
+  AuthenticatedQueueRoute: typeof AuthenticatedQueueRoute
+  AuthenticatedReportRoute: typeof AuthenticatedReportRoute
+  AuthenticatedRescueTeamsRoute: typeof AuthenticatedRescueTeamsRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedMyReportsRoute: AuthenticatedMyReportsRoute,
+  AuthenticatedOperationsRoute: AuthenticatedOperationsRoute,
+  AuthenticatedQueueRoute: AuthenticatedQueueRoute,
+  AuthenticatedReportRoute: AuthenticatedReportRoute,
+  AuthenticatedRescueTeamsRoute: AuthenticatedRescueTeamsRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
+  AlertsRoute: AlertsRoute,
+  AuthRoute: AuthRoute,
+  DesignSystemRoute: DesignSystemRoute,
+  HistoryRoute: HistoryRoute,
+  HospitalsRoute: HospitalsRoute,
+  MapRoute: MapRoute,
+  NgosRoute: NgosRoute,
+  SafetyRoute: SafetyRoute,
+  SheltersRoute: SheltersRoute,
+  DisastersIdRoute: DisastersIdRoute,
+  DisastersIndexRoute: DisastersIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
