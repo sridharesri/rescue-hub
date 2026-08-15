@@ -113,6 +113,18 @@ function ReportPage() {
             className="space-y-5"
             onSubmit={(event) => {
               event.preventDefault();
+              if (form.title.trim().length < 4) {
+                toast.error("Title must be at least 4 characters");
+                return;
+              }
+              if (form.description.trim().length < 10) {
+                toast.error("Description must be at least 10 characters");
+                return;
+              }
+              if (form.area.trim().length < 2) {
+                toast.error("Add the area or locality");
+                return;
+              }
               if (invalidCoords) {
                 toast.error("Add a valid latitude and longitude");
                 return;
@@ -169,6 +181,8 @@ function ReportPage() {
               id="description"
               label="Describe the situation"
               required
+              minLength={10}
+              hint="At least 10 characters."
               rows={5}
               placeholder="Water level, trapped people, blocked roads, immediate needs…"
               value={form.description}
